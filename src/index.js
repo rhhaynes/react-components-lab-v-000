@@ -11,7 +11,7 @@ const BUTCHER_PRODUCTS = [
 export class OlderCoaster extends React.Component {
   render() {
     return (
-      <div class="oldercoaster">
+      <div className="oldercoaster">
         <p>Two grannies having the time of their life!</p>
         <p>Passengers:</p>
         <ul>
@@ -35,13 +35,13 @@ export class InFrontOfYou extends React.Component {
 }
 
 export class ButcherShop extends React.Component {
-  render(){
-    const products = BUTCHER_PRODUCTS.map( p => <li>{ p }</li> )
+  render() {
+    const products = BUTCHER_PRODUCTS.map( (p,i) => <li key={i}>{p}</li> )
     return (
-      <div class="butcher-shop">
+      <div className="butcher-shop">
         <p>Hello! We have the following products for sale today:</p>
         <ul>
-          { products }
+          {products}
         </ul>
       </div>
     )
