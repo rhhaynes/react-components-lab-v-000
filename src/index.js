@@ -1,6 +1,4 @@
-// import React from 'react' // We need to import react so we can make use of its .component class
 import React from 'react'
-// import ReactDOM from 'react-dom' // ...and we need to import ReactDOM so we can create and test a virtual DOM with react!
 import ReactDOM from 'react-dom'
 
 const BUTCHER_PRODUCTS = [
@@ -10,9 +8,8 @@ const BUTCHER_PRODUCTS = [
   'Ribeye'
 ]
 
-// Define these exported classes
 export class OlderCoaster extends React.Component {
-  render(){
+  render() {
     return (
       <div class="oldercoaster">
         <p>Two grannies having the time of their life!</p>
@@ -27,7 +24,7 @@ export class OlderCoaster extends React.Component {
 }
 
 export class InFrontOfYou extends React.Component {
-  render(){
+  render() {
     return (
       <div>
         <p>You shouldn't look too far.</p>
@@ -39,14 +36,12 @@ export class InFrontOfYou extends React.Component {
 
 export class ButcherShop extends React.Component {
   render(){
+    const products = BUTCHER_PRODUCTS.map( p => <li>{ p }</li> )
     return (
       <div class="butcher-shop">
         <p>Hello! We have the following products for sale today:</p>
         <ul>
-          <li>Tenderloin</li>
-          <li>Short ribs</li>
-          <li>Beef shin</li>
-          <li>Ribeye</li>
+          { products }
         </ul>
       </div>
     )
@@ -57,7 +52,9 @@ export class App extends React.Component {
   render() {
     return (
       <div id="app">
-
+        <OlderCoaster/>
+        <InFrontOfYou/>
+        <ButcherShop/>
       </div>
     )
   }
